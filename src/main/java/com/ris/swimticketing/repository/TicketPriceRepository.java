@@ -1,4 +1,8 @@
 package com.ris.swimticketing.repository;
 
-public interface TicketPriceRepository extends org.springframework.data.jpa.repository.JpaRepository<com.ris.swimticketing.model.TicketPrice, java.lang.Integer> {
-  }
+import com.ris.swimticketing.model.TicketPrice;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TicketPriceRepository extends JpaRepository<TicketPrice, Integer> {
+    TicketPrice findByOperationalHoursId(int dayNumber);
+}
